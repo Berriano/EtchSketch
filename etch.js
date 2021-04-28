@@ -49,9 +49,11 @@ allGrid.forEach((div) => {
 
 const clearBtn = document.querySelector("#clear-btn");
 const clearGrid = document.querySelectorAll(".box");
+ 
+
 
 clearGrid.forEach((div) => {
-clearBtn.addEventListener('click', function(){div.style.background = 'white';})
+clearBtn.addEventListener('click',function(){div.style.background = 'white';})
 
 
     })
@@ -64,6 +66,12 @@ boxes();
 
 
 
+
+//function for promt box
+
+function pBox(){
+    let userGrid = prompt("How many per side for new grid?");
+    }
 
 
 
