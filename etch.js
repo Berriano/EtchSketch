@@ -19,7 +19,7 @@ let x=0;
 // create new div-box
 
 
-const div1 = document.createElement('button');
+const div1 = document.createElement('div');
 div1.classList.add('box');
 
 
@@ -29,36 +29,36 @@ div1.classList.add('box');
 container.appendChild(div1);
 
 
-//change box color
 
+// change box color
 
+const allGrid = document.querySelectorAll("div.box");
 
-const divCol = document.querySelectorAll('button');
+allGrid.forEach((div) => {
 
-divCol.forEach((button) => {
-
-    button.addEventListener('mouseover', function (colChange)  {colChange.target.style.background = 'blue';}
+    div.addEventListener('mouseover', function (colChange)  {colChange.target.style.background = 'blue';}
     
     );
  })
 
-// change color back
-
-
-    //divCol.forEach((button) => {
-
-        //  button.addEventListener("mouseout", function (changeBack)  {changeBack.target.style.background = "white";}
-    
-   /// );
- //})
-
-
-  }
 
 }
-    
-    
-    
+
+
+//clear button
+
+const clearBtn = document.querySelector("#clear-btn");
+const clearGrid = document.querySelectorAll(".box");
+
+clearGrid.forEach((div) => {
+clearBtn.addEventListener('click', function(){div.style.background = 'white';})
+
+
+    })
+
+}
+  
+
 boxes();
 
 
