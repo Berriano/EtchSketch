@@ -1,94 +1,88 @@
 
-/// grid size prompt box function ///
-
-
-let newgrid = gridSize();
-
- function gridSize(){
-
-    let wGrid=0;
-    let hGrid=0;
-
-    wGrid = prompt("How many boxes wide?");
-    hGrid = prompt("how many boxes high?");
-
-    return wGrid * hGrid; 
-}
-
-
-                        /// select #grid-container ///
-
-
-const container = document.querySelector('#grid-container');
-
-
-
-                            //////boxes function///////
+                        //////boxes function///////
 
 
 function boxes (){
 
 
-                                    /// loop  ///
+                         ///////// loop  ////////////
 
 let x=0;
 
     for(x=0;x<newgrid;x++){
 
 
-                            /// create new div-box ///
+                          ///// create new div-box /////
 
 
-
+const container = document.querySelector('#grid-container');
 const div1 = document.createElement('div');
 div1.classList.add('box');
 container.appendChild(div1);
 
 
-                    ///change box color (included in loop) ///
+
+}
+
+
+                           /////////////end of loop/////////////
+
+
+
+                       ////////// ///change box color/////////////
 
 
 
 const allGrid = document.querySelectorAll("div.box");
 
-allGrid.forEach((div) => {
-
-    div.addEventListener('mouseover', function (colChange){
-        colChange.target.style.background = 'blue';
-    }
-   );
- })
-
-}
-                /////////////end of loop/////////////
-
-
-
+allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
+                                     colChange.target.style.background = 'blue';});
+})
  
 
 
+                                    /// clear button ///
 
-                        /// clear button ///
 
 const clearBtn = document.querySelector("#clear-btn");
-const clearGrid = document.querySelectorAll(".box");
+const clearGrid = document.querySelectorAll(".box"); // selects created element div
  
-clearGrid.forEach((div) => {
-clearBtn.addEventListener('click',function(){div.style.background = 'white';})
-})
+clearGrid.forEach((div) => {clearBtn.addEventListener('click',function(){
+                                         div.style.background = 'white';})})
 
 clearBtn.addEventListener('click', gridSize)
+
+
 }
 
 
 
-        ///////////////end of boxes function/////////////////
+                      ///////////////end of boxes function/////////////////
 
  
+                             /// grid size prompt box function ///
+
+
+let newgrid = gridSize();
+
+    function gridSize(){
+
+        let wGrid=0;
+        let hGrid=0;
+
+            wGrid = prompt("How many boxes wide?");
+            hGrid = prompt("how many boxes high?");
+
+            return wGrid * hGrid; 
+}
+
+
+
+
 //run boxes function and check gridsizre value
 boxes();
 
-console.log(gridSize());
+console.log(newgrid);
 
 
                    /////////////// end ///////////////
