@@ -29,9 +29,9 @@ let gridSize = wGrid * hGrid;
                                    
                          ///////// loop  ////////////
 
-let x=0;
 
-    for(x=0;x<gridSize;x++){
+
+    for(let x=0;x<gridSize;x++){
 
 
                ////////// to create new div-box class 'box'/////////
@@ -54,15 +54,19 @@ allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange)
          //////////////////////clear button function/////////////////////
 
 const clBtn = document.querySelector('.clear-btn');
+
+
+/////////////// function not working properly///////////////////
+
 clBtn.addEventListener('click', function(){
 
     let clearGrid = document.querySelector(".box");
-    clearGrid.remove();
-
-    //div1.classList.remove('box')
-
+      clearGrid.remove();
+    console.log(clearGrid);
  })
  
+
+ clBtn.addEventListener('click', boxes)
 
 }
 
@@ -73,19 +77,15 @@ console.log(gridSize);
 
 }
 
-    
-
+  
                       ///////////////end of boxes function//////////////
 
-                    
-
-         
-
-
+                  
 
                         //run boxes function and check gridsizre value
 
 boxes();
+
 
 
 
