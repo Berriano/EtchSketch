@@ -6,7 +6,7 @@
 }
 
 
-#container{
+.container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 2fr 1fr;
@@ -18,7 +18,7 @@
 
 }
 
-#grid-container{
+.grid-container{
     grid-column: 2/3;
     grid-row: 2/3;
     display: grid;
@@ -42,7 +42,7 @@
   
 }
 
-#clear-btn{
+.clear-btn{
     
     grid-column: 2/3;
     grid-row: 1/2;

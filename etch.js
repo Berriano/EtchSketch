@@ -1,91 +1,98 @@
 
+                        //////create grid container////////
+
+const container = document.querySelector('.container'); 
+const gridCont = document.createElement('div');
+gridCont.classList.add('grid-container');
+container.appendChild(gridCont);
+
+ 
+                /////////////////create clear button////////////
+
+const clearBtn = document.createElement('button');
+clearBtn.classList.add('clear-btn');
+container.appendChild(clearBtn);
+clearBtn.textContent = "Clear";
+
+
                         //////boxes function///////
 
 
 function boxes (){
 
+                            /// grid size prompt box function ///
 
+
+let  wGrid = prompt("How many boxes wide?");
+let  hGrid = prompt("how many boxes high?");
+let gridSize = wGrid * hGrid;
+                                   
                          ///////// loop  ////////////
 
 let x=0;
 
-    for(x=0;x<newgrid;x++){
+    for(x=0;x<gridSize;x++){
 
 
-                          ///// create new div-box /////
+               ////////// to create new div-box class 'box'/////////
 
 
-const container = document.querySelector('#grid-container');
+
+const gridContainer = document.querySelector('.grid-container');
 const div1 = document.createElement('div');
 div1.classList.add('box');
-container.appendChild(div1);
+gridContainer.appendChild(div1);
 
+       
+                       ////////// ///change box color/////////////
 
+const allGrid = document.querySelectorAll(".box");
+allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
+                                              colChange.target.style.background = 'blue';});
+    })
+   
+         //////////////////////clear button function/////////////////////
+
+const clBtn = document.querySelector('.clear-btn');
+clBtn.addEventListener('click', function(){
+
+    let clearGrid = document.querySelector(".box");
+    clearGrid.remove();
+
+    //div1.classList.remove('box')
+
+ })
+ 
 
 }
-
 
                            /////////////end of loop/////////////
 
 
-
-                       ////////// ///change box color/////////////
-
-
-
-const allGrid = document.querySelectorAll("div.box");
-
-allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
-                                     colChange.target.style.background = 'blue';});
-})
- 
-
-
-                                    /// clear button ///
-
-
-const clearBtn = document.querySelector("#clear-btn");
-const clearGrid = document.querySelectorAll(".box"); // selects created element div
- 
-clearGrid.forEach((div) => {clearBtn.addEventListener('click',function(){
-                                         div.style.background = 'white';})})
-
-clearBtn.addEventListener('click', gridSize)
-
+console.log(gridSize);
 
 }
 
+    
 
+                      ///////////////end of boxes function//////////////
 
-                      ///////////////end of boxes function/////////////////
+                    
 
- 
-                             /// grid size prompt box function ///
-
-
-let newgrid = gridSize();
-
-    function gridSize(){
-
-        let wGrid=0;
-        let hGrid=0;
-
-            wGrid = prompt("How many boxes wide?");
-            hGrid = prompt("how many boxes high?");
-
-            return wGrid * hGrid; 
-}
+         
 
 
 
+                        //run boxes function and check gridsizre value
 
-//run boxes function and check gridsizre value
 boxes();
 
-console.log(newgrid);
 
 
-                   /////////////// end ///////////////
+
+
+
+                   //////////////////////////// end ////////////////////////////////
 
 
 
