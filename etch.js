@@ -8,28 +8,30 @@ gridCont.setAttribute('id', 'grid-container')
 gridCont.removeAttribute('class','grid-container')
 container.appendChild(gridCont);
 
- 
+          ////////////////////call boxes function to start////////////////////
 
-                        //////boxes function///////
+boxes();
+
+                                //////boxes function///////
 
 
 function boxes (){
 
-                            /// grid size prompt box function ///
+                                /// grid size prompt box ///
 
 
 let  wGrid = prompt("How many boxes wide?");
 let  hGrid = prompt("how many boxes high?");
 let gridSize = wGrid * hGrid;
                                    
-                         ///////// loop  ////////////
+                               ///////// loop  ////////////
 
 
 
     for(let x=0;x<gridSize;x++){
 
 
-               ////////// to create new div-box class 'box'/////////
+                  ////////// to create new div-box class 'box'/////////
 
 
 
@@ -56,8 +58,8 @@ console.log(gridSize);
 
 }
 
-  
                       ///////////////end of boxes function//////////////
+
 
             
               //////////////////////clear button function/////////////////////
@@ -73,7 +75,8 @@ console.log(gridSize);
      }
 })            
 
-                      //////////////// end of clear /////////////////                 
+                      //////////////// end of clear /////////////////    
+
 
                     /////////////////restart by click/////////////////
 
@@ -81,7 +84,8 @@ console.log(gridSize);
 const restart = document.getElementById('clear-btn');
 restart.addEventListener('click', boxes);
 
-                   //////////////////////////// end ////////////////////////////////
+
+               //////////////////////////// end ////////////////////////////////
 
 
 
