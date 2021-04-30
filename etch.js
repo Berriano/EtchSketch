@@ -4,16 +4,11 @@
 const container = document.querySelector('.container'); 
 const gridCont = document.createElement('div');
 gridCont.classList.add('grid-container');
+gridCont.setAttribute('id', 'grid-container')
+gridCont.removeAttribute('class','grid-container')
 container.appendChild(gridCont);
 
  
-                /////////////////create clear button////////////
-
-const clearBtn = document.createElement('button');
-clearBtn.classList.add('clear-btn');
-container.appendChild(clearBtn);
-clearBtn.textContent = "Clear";
-
 
                         //////boxes function///////
 
@@ -38,7 +33,7 @@ let gridSize = wGrid * hGrid;
 
 
 
-const gridContainer = document.querySelector('.grid-container');
+const gridContainer = document.querySelector('#grid-container');
 const div1 = document.createElement('div');
 div1.classList.add('box');
 gridContainer.appendChild(div1);
@@ -50,27 +45,11 @@ const allGrid = document.querySelectorAll(".box");
 allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
                                               colChange.target.style.background = 'blue';});
     })
-   
-         //////////////////////clear button function/////////////////////
 
-const clBtn = document.querySelector('.clear-btn');
-
-
-/////////////// function not working properly///////////////////
-
-clBtn.addEventListener('click', function(){
-
-    let clearGrid = document.querySelector(".box");
-      clearGrid.remove();
-    console.log(clearGrid);
- })
- 
-
- clBtn.addEventListener('click', boxes)
 
 }
 
-                           /////////////end of loop/////////////
+                          /////////////end of loop/////////////
 
 
 console.log(gridSize);
@@ -80,17 +59,27 @@ console.log(gridSize);
   
                       ///////////////end of boxes function//////////////
 
-                  
-
-                        //run boxes function and check gridsizre value
-
-boxes();
+            
+              //////////////////////clear button function/////////////////////
 
 
+    const clBtn = document.getElementById('clear-btn');
+
+    clBtn.addEventListener('click', function(){
+     let element = document.getElementById('grid-container');
+     while (element.firstChild){
+       element.removeChild(element.firstChild);
+       console.log(element);
+     }
+})            
+
+                      //////////////// end of clear /////////////////                 
+
+                    /////////////////restart by click/////////////////
 
 
-
-
+const restart = document.getElementById('clear-btn');
+restart.addEventListener('click', boxes);
 
                    //////////////////////////// end ////////////////////////////////
 
