@@ -22,12 +22,10 @@
     grid-column: 2/3;
     grid-row: 2/3;
     display: grid;
-    grid-template-columns: repeat(16,1fr);
-    grid-template-rows: repeat(16,1fr);
-    grid-gap: 5px;
+    grid-gap: 1px;
+    justify-self: center;
   
     height: 300px;
-
     width:100%;
     
 }
