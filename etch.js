@@ -11,9 +11,6 @@ gridCont.removeAttribute('class','grid-container')
 container.appendChild(gridCont);
 
 
-          ////////////////////call boxes function to start////////////////////
-
-boxes();
 
                         ////////////// boxes function //////////////
 
@@ -28,7 +25,7 @@ let gridSize = wGrid * wGrid;
 
 
 
-                   ///////////// size grid to boxes amount /////////////////
+                   ///////////// size grid from prompt /////////////////
 
 
   let gridCss = document.getElementById('grid-container');
@@ -44,7 +41,7 @@ let gridSize = wGrid * wGrid;
        for(let x=0;x<gridSize;x++){
 
 
-                  ////////// to create new div-box class 'box'/////////
+                  ////////// create new div-box class 'box'/////////
 
 
 
@@ -54,26 +51,39 @@ const div1 = document.createElement('div');
 div1.classList.add('box');
 gridContainer.appendChild(div1);
 
+
+        /////////////////////////////// generate random color /////////////////////////
+
+       
+        function genRandCol(){
+         
+          let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);    
+            return randomColor;
+          
+          
+        }
+        /////////////////////////////// end of random color ////////////////////////////
+
                 
        
                        ///////////// change box color /////////////
 
-
+                      
 const allGrid = document.querySelectorAll(".box");
 
 allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
-                                              colChange.target.style.background = 'blue';});
+                                        colChange.target.style.background = genRandCol();});
+                                                               
   })
-
-
-
+      
+ }
                           /////////////end of loop//////////////
 
 }
 
                       ///////////////end of boxes function//////////////
 
-}
+
             
               //////////////////////// clear button ////////////////////////
 
@@ -96,6 +106,9 @@ const restart = document.getElementById('clear-btn');
 restart.addEventListener('click', boxes);
 
 
+          ////////////////////call boxes function to start////////////////////
+    
+boxes();
 
                //////////////////////////// end ////////////////////////////////
 
