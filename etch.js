@@ -23,9 +23,7 @@ function boxes (){
 let  wGrid = prompt("How many boxes squared?");
 let gridSize = wGrid * wGrid;
 
-
-
-                   ///////////// size grid from prompt /////////////////
+                 ///////////// size grid from prompt /////////////////
 
 
   let gridCss = document.getElementById('grid-container');
@@ -34,57 +32,46 @@ let gridSize = wGrid * wGrid;
       gridCss.style.gridTemplateRows = `repeat(${wGrid}, 1fr)`;
 
 
+ const gridContainer = document.getElementById('grid-container');
 
-                      ///////////// loop grid creation //////////////
+                       ///////////// loop grid creation //////////////
 
-    
-       for(let x=0;x<gridSize;x++){
+     for(let x=0;x<gridSize;x++){
 
 
                   ////////// create new div-box class 'box'/////////
 
-
-
-const gridContainer = document.getElementById('grid-container');
 const div1 = document.createElement('div');
 
 div1.classList.add('box');
 gridContainer.appendChild(div1);
 
+}           
+                                /////////////end of loop//////////////
 
-        /////////////////////////////// generate random color /////////////////////////
 
-       
-        function genRandCol(){
-         
-          let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);    
-            return randomColor;
-          
-          
-        }
-        /////////////////////////////// end of random color ////////////////////////////
+                             ///////////// change box color /////////////
 
-                
-       
-                       ///////////// change box color /////////////
-
-                      
 const allGrid = document.querySelectorAll(".box");
 
-allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
+  allGrid.forEach((div) => {div.addEventListener('mouseover', function (colChange){
                                         colChange.target.style.background = genRandCol();});
                                                                
   })
-      
  }
-                          /////////////end of loop//////////////
-
-}
-
-                      ///////////////end of boxes function//////////////
+                       ///////////////end of boxes function//////////////   
 
 
-            
+     /////////////////////////////// generate random color /////////////////////////
+
+       function genRandCol(){
+         let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);    
+             return randomColor;
+                               
+   }     
+       /////////////////////////////// end of random color ////////////////////////////
+
+     
               //////////////////////// clear button ////////////////////////
 
 
