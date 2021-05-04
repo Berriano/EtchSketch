@@ -58,3 +58,48 @@ background-color:red;
 }
 
 
+
+
+#slide-bar{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 5%;
+ 
+    
+}
+
+
+/**************  slider container ****************/
+
+#slidertxt-cont{
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    margin-bottom: 20%;
+
+  
+  
+
+}
+
+#slide-text{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 1.2em;
+   
+
+}
+
+#value-word{font-size: 1.2em;
+}
+
+#ok-btn{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 3%;
+   
+}
