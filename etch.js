@@ -12,18 +12,19 @@ container.appendChild(gridCont);
 
 
 
-                        ////////////// boxes function //////////////
+
+                            ////////////// boxes function //////////////
 
 
 function boxes (){
 
-                       //////////// grid size prompt box ////////////////
+                           //////////// grid size prompt box ////////////////
 
 
 let  wGrid = prompt("How many boxes squared(1-100)?");
 let gridSize = wGrid * wGrid;
 
-                 ///////////// size grid from prompt /////////////////
+                       ///////////// size grid from prompt /////////////////
 
 
   let gridCss = document.getElementById('grid-container');
