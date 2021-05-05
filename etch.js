@@ -83,7 +83,7 @@ pBox();
 
 ///////////////////// add value to screen /////////////////////////
 
-let gValue = document.getElementById('clear-btn');
+let gValue = document.getElementById('bot-mid');
 gValue.textContent = 'Grid size: ' + wGrid + ' x ' + wGrid + ' squares' ;
 }
 
