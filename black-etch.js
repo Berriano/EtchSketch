@@ -15,7 +15,7 @@ container.appendChild(gridCont);
 
 ///rgb///
 
-const topLeft =document.getElementById('top-left');
+const topLeft =document.getElementById('bot-left');
 const rgbBtn = document.createElement('button');
  rgbBtn.classList.add('rgb');
   rgbBtn.setAttribute('id', 'rgbbutton');
@@ -43,7 +43,7 @@ function genRandCol(){
         
 ///black////
 
-const topRight =document.querySelector('#top-left');
+const topRight =document.querySelector('#bot-right');
 const blkBtn =document.createElement('button');
  blkBtn.classList.add('blkbtn');
   blkBtn.setAttribute('id', 'blkbtn');
